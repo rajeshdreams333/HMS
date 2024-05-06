@@ -1,0 +1,31 @@
+{% extends "./Patient/base1.html" %}
+{% block content %}
+<div>
+{% for i in rows%}
+     <div class="container mx-auto px-4 py-8">
+        <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <div class="flex items-center space-x-4">
+                <img src="../static/Profile.jpg" alt="Profile Picture" class="w-32 h-32 rounded">
+                <div>
+                    <h2 class="text-xl text-gray-800"><strong>Name: {{i['Patient_Name']}}</strong></h2>
+                    <p class="text-sm text-gray-600"><strong>ID: {{i['Patient_Id']}}</strong></p>
+                    <p class="text-sm text-gray-600"><strong>Email: {{i['email']}}</strong></p>
+                </div>
+            </div>
+            <div class="mt-6">
+                <p class="text-sm text-gray-600"><strong>Age: </strong> {{i['Patient_Age']}}</p>
+                <p class="text-sm text-gray-600"><strong>Location: </strong>{{i['Address']}}</p>
+                <p class="text-sm text-gray-600"><strong>Room No: </strong> {{i['Room_No']}}</p>
+                <p class="text-sm text-gray-600"><strong>Doctor No: </strong> {{i['Doctor_Id']}}</p>
+                <p class="text-sm text-gray-600"><strong>Doctor Name: </strong>{{i['Doctor_Name']}}</p>
+                <p class="text-sm text-gray-600"><strong>Blood Group:</strong> {{i['Blood_Group']}}</p>
+                <p class="text-sm text-gray-600"><strong>Height: </strong> {{i['Height']}}</p>
+                <p class="text-sm text-gray-600"><strong>Weight:</strong> {{i['Weight']}}</p>
+            </div>
+        </div>
+    </div>
+ {% endfor %}
+</div>
+{% endblock %}
+
+

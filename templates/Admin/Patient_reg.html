@@ -1,0 +1,111 @@
+{% extends "./Admin/base.html" %}
+{% block content%}
+<div class="center p-3 rounded  max-w-screen-xl mx-auto">
+    <div class="max-w-md mx-auto bg-white p-4 rounded shadow-md">
+        <form method="POST" action="/admin/savedetails" class="space-y-4">
+            <div class="text-xl font-medium flex justify-center">Patient Form</div>
+              <div class="flex space-x-2">
+                <div class="w-1/4">
+                    <label for="pid" class="block text-sm font-medium text-gray-700">Patient Id</label>
+                    <input type="text" id="pid" name="p_id" value={{n}} class="mt-1 p-2 block w-full border border-gray-300 rounded-md" readonly>
+                </div>
+                <div class="w-3/4">
+                    <label for="pname" class="block text-sm font-medium text-gray-700">Patient Name</label>
+                    <input type="text" id="pname" name='pname' class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                </div>
+            </div>
+             <div>
+                <label for="room" class="block text-sm font-medium text-gray-700">Choose a Room</label>
+                <select name="room" id="room"
+                    class="mt-1 block w-full border border-gray-300 bg-white rounded-md shadow-sm p-2">
+                    <option default>Choose room</option>
+                    <option value="101">101</option>
+                    <option value="102">102</option>
+                    <option value="103">103</option>
+                    <option value="104">104</option>
+                    <option value="201">201</option>
+                    <option value="202">202</option>
+                    <option value="203">203</option>
+                    <option value="204">204</option>
+                    <option value="301">301</option>
+                    <option value="302">302</option>
+                    <option value="303">303</option>
+                    <option value="304">304</option>
+                </select>
+            </div>
+             <div class="flex space-x-2">
+                <div class="w-1/4">
+                    <label for="did" class="block text-sm font-medium text-gray-700">Doctor Id</label>
+                    <input type="text" id="did" name="d_id" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                </div>
+                <div class="w-3/4">
+                    <label for="d_name" class="block text-sm font-medium text-gray-700">Doctor Name</label>
+                    <input type="text" id="d_name" name="d_name" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                </div>
+            </div>
+              <div class="space-y-2">
+                <div class="text-sm font-medium text-gray-700">Gender</div>
+                <div class="flex items-center space-x-2">
+                    <input type="radio" id="age1" name="gender" value="Male"
+                        class="h-4 w-4 border-gray-300">
+                    <label for="age1" class="text-sm font-medium text-gray-700">Male</label>
+                    <input type="radio" id="age2" name="gender" value="Female"
+                        class="h-4 w-4 border-gray-300">
+                    <label for="age2" class="text-sm font-medium text-gray-700">Female</label>
+                    <input type="radio" id="age3" name="gender" value="Female"
+                        class="h-4 w-4 border-gray-300">
+                    <label for="age3" class="text-sm font-medium text-gray-700">Other</label>
+                </div>
+            </div>
+            <div>
+                <label for="age" class="text-sm font-medium text-gray-700">Patient Age</label>
+                <input type="number" name="age" id="age" required
+                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+            </div>
+             <div class="flex space-x-2">
+                <div class="w-1/2">
+                    <label for="weight" class="block text-sm font-medium text-gray-700">Weight</label>
+                    <input type="text" name="weight" id="weight" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                </div>
+                <div class="w-1/2">
+                    <label for="height" class="block text-sm font-medium text-gray-700">Height</label>
+                    <input type="text" id="height" name="height" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                </div>
+            </div>
+               <div class="flex space-x-2">
+                <div class="w-1/4">
+                    <label for="bgroup" class="block text-sm font-medium text-gray-700">Blood Group</label>
+                <select name="bgroup" id="bgroup"
+                    class="mt-1 block w-full border border-gray-300 bg-white rounded-md shadow-sm p-2">
+                    <option default>Select</option>
+                    <option value="O+ve">O+ve</option>
+                    <option value="A+ve">A+ve</option>
+                    <option value="B+ve">B+ve</option>
+                    <option value="AB+ve">AB+ve</option>
+                    <option value="O-ve">O-ve</option>
+                    <option value="AB-ve">AB-ve</option>
+                    <option value="A-ve">A-ve</option>
+                    <option value="B-ve">B-ve</option>
+                </select>
+                </div>
+                <div class="w-3/4">
+                    <label for="mobile" class="block text-sm font-medium text-gray-700">Phone number</label>
+                    <input type="tel" id="mobile" name="mobile" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div>
+                <label for="address" class="text-sm font-medium text-gray-700">Address</label>
+                <input type="text" id="address" name="address" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+            </div>
+            <button type="submit"
+                class="w-full py-2 px-4 rounded-md shadow-md text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700">
+                Submit
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

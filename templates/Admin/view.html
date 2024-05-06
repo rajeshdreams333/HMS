@@ -1,0 +1,54 @@
+{% extends "./Admin/base.html" %}
+{% block content %}
+<div class="p-4 overflow-x-auto">
+    <h4 class="text-center font-bold">Patient Details</h4>
+    <table class="min-w-full divide-y divide-gray-200">
+        <thead class="p-3 bg-gray-50">
+            <tr>
+                <th scope="col" class="px-1 py-3 text-center text-xs font-medium font-bold text-gray-900 uppercase tracking-wider">Patient ID</th>
+                <th scope="col" class="px-1 py-3 text-center text-xs font-medium  font-bold text-gray-900 uppercase tracking-wider">Patient Name</th>
+                <th scope="col" class="px-1 py-3 text-center text-xs font-medium font-bold text-gray-900 uppercase tracking-wider">Room No</th>
+                <th scope="col" class="px-1 py-3 text-center text-xs font-medium font-bold text-gray-900 uppercase tracking-wider">Doctor Id</th>
+                <th scope="col" class="px-1 py-3 text-center text-xs font-medium font-bold text-gray-900 uppercase tracking-wider">Doctor Name</th>
+                <th scope="col" class="px-1 py-3 text-center text-xs font-medium font-bold text-gray-900 uppercase tracking-wider">Gender</th>
+                <th scope="col" class="px-1 py-3 text-center text-xs font-medium font-bold text-gray-900 uppercase tracking-wider">Patient Age</th>
+                <th scope="col" class="px-1 py-3 text-center text-xs font-medium font-bold text-gray-900 uppercase tracking-wider">Weight</th>
+                <th scope="col" class="px-1 py-3 text-center text-xs font-medium font-bold text-gray-900 uppercase tracking-wider">Height</th>
+                <th scope="col" class="px-1 py-3 text-center text-xs font-medium font-bold text-gray-900 uppercase tracking-wider">Blood Group</th>
+                <th scope="col" class="px-1 py-3 text-center text-xs font-medium font-bold text-gray-900 uppercase tracking-wider">Phone number</th>
+                <th scope="col" class="px-1 py-3 text-center text-xs font-medium font-bold text-gray-900 uppercase tracking-wider">Address</th>
+                <th scope="col" class="px-1 py-3 text-center text-xs font-medium font-bold text-gray-900 uppercase tracking-wider">Email</th>
+                <th scope="col" class="px-1 py-3 text-center text-xs font-medium font-bold text-gray-900 uppercase tracking-wider">Delete</th>
+                <th scope="col" class="px-1 py-3 text-center text-xs font-medium font-bold text-gray-900 uppercase tracking-wider">Edit</th>
+            </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+            {% for row in rows %}
+            <tr>
+                <td class="px-1 py-1 whitespace-nowrap text-center">{{ row["Patient_Id"] }}</td>
+                <td class="px-1 py-1 whitespace-nowrap text-center">{{ row["Patient_Name"] }}</td>
+                <td class="px-1 py-1 whitespace-nowrap text-center">{{ row["Room_No"] }}</td>
+                <td class="px-1 py-1 whitespace-nowrap text-center">{{ row["Doctor_Id"] }}</td>
+                <td class="px-1 py-1 whitespace-nowrap text-center">{{ row["Doctor_Name"] }}</td>
+                <td class="px-1 py-1 whitespace-nowrap text-center">{{ row["Gender"] }}</td>
+                <td class="px-1 py-1 whitespace-nowrap text-center">{{ row["Patient_Age"] }}</td>
+                <td class="px-1 py-1 whitespace-nowrap text-center">{{ row["Weight"] }}</td>
+                <td class="px-1 py-1 whitespace-nowrap text-center">{{ row["Height"] }}</td>
+                <td class="px-1 py-1 whitespace-nowrap text-center">{{ row["Blood_Group"] }}</td>
+                <td class="px-1 py-1 whitespace-nowrap text-center">{{ row["Phone_No"] }}</td>
+                <td class="px-1 py-1 whitespace-nowrap text-center">{{ row["Address"] }}</td>
+                <td class="px-1 py-1 whitespace-nowrap text-center">{{ row["Email"] }}</td>
+                <td class="px-1 py-1 whitespace-nowrap flex justify-center items-center">
+                <a href="/admin/deletebutton?id={{ row['Patient_Id'] }}">
+                <img src="../static/del.jpg" alt="no_img" class="h-5 w-5"></a>
+                </td>
+                <td class="px-1 py-1 whitespace-nowrap justify-center items-center">
+                <a href="/admin/update?Patient_Id={{row['Patient_Id']}}&Patient_Name={{row['Patient_Name']}}&Room_No={{row['Room_No']}}&Doctor_Id={{row['Doctor_Id']}}&Doctor_Name={{row['Doctor_Name']}}&Gender={{row['Gender']}}&Patient_Age={{row['Patient_Age']}}&Weight={{row['Weight']}}&Height={{row['Height']}}&Blood_Group={{row['Blood_Group']}}&Phone_No={{row['Phone_No']}}&Address={{row['Address']}}&Email={{row['Email']}}">
+                <img src="../static/edit.png" alt="no_img" class="h-4 w-4"></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

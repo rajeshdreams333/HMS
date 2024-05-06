@@ -1,0 +1,45 @@
+{% extends "./Admin/base.html" %}
+{% block content %}
+<div>
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="../static/img1.jpg" alt="img-1" class="d-block w-full" style="height: 87.9vh; width: 100%">
+      <div class="carousel-caption flex flex-col justify-center h-full text-center text-white">
+        <h3 class="text-4xl font-bold">Healthcare Services</h3>
+        <p class="text-lg">Hospitals are institutions designed to provide medical, surgical, and nursing care for the sick or injured. They offer a wide range of healthcare services, including emergency care, diagnostics, treatment, surgery, and rehabilitation.</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="../static/img2.JPG" alt="img-2" class="d-block w-full" style="height: 87.9vh; width: 100%">
+      <div class="carousel-caption flex flex-col justify-center h-full text-center text-white">
+        <h3 class="text-4xl font-bold text-black">Staffing</h3>
+        <p class="text-lg text-black">Hospitals employ various healthcare professionals, including doctors, nurses, technicians, therapists, pharmacists, and administrative staff. Each plays a crucial role in ensuring patients receive comprehensive care.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../static/img5.jpg" alt="img-3" class="d-block w-full" style="height: 87.9vh; width: 100%">
+      <div class="carousel-caption flex flex-col justify-center h-full text-center text-white">
+        <h3 class="text-4xl font-bold">Emergency Services</h3>
+        <p class="text-lg">Hospitals have emergency departments (EDs) to handle urgent medical situations, such as trauma, accidents, heart attacks, and strokes. These departments operate 24/7 and are staffed to respond to medical emergencies promptly.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../static/img4.jpg" alt="img-4" class="d-block w-full" style="height: 87.9vh; width: 100%">
+      <div class="carousel-caption flex flex-col justify-center h-full text-center text-white">
+        <h3 class="text-4xl font-bold">Patient Care</h3>
+        <p class="text-lg">Hospitals prioritize patient care and safety. They adhere to strict protocols and standards to provide quality care and minimize the risk of medical errors or infections.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+{% endblock %}
